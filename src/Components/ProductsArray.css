@@ -1,0 +1,22 @@
+.productslist-container {
+  display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.products-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  column-gap: 15rem;
+    row-gap: 4rem;
+  list-style: none;
+  padding: 0;
+}
+
+@media (max-width: 650px) {
+  .products-list {
+    grid-template-columns: 1fr;
+  }
+}

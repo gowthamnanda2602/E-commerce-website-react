@@ -1,0 +1,23 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+.nav-links{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    left: 30px;
+}
+
+.nav-links h2{
+    color: white;
+    cursor: pointer;
+}
+
+.nav-cart{
+    margin-right: 20px;
+}
