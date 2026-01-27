@@ -2,7 +2,13 @@ import React from 'react';
 import './Navbar.css';
 
 
- const Navbar = () => {
+ const Navbar = (props) => {
+
+  const onCartButtonClick = () => {
+    console.log("cart button clicked");
+    props.onShowCart();
+  }
+
   return (
     <div className='navbar'>
       <div className='nav-links'>
@@ -10,9 +16,7 @@ import './Navbar.css';
         <h2>STORE</h2>
         <h2>ABOUT</h2>
       </div>
-      <div className='nav-cart'>
-        <button>cart</button>
-    </div>
+        <button className='cart-button' onClick={onCartButtonClick}>cart</button>
     </div>
   );
 }

@@ -10,7 +10,7 @@ const List = (props) => {
             <img src={props.imageUrl} alt={props.title} />
             <div className="price-button">
             <p>Price: ${props.price}</p>
-            <button>Add to Cart</button>
+            <button className="add-to-cart">Add to Cart</button>
             </div>
         </li>
     );

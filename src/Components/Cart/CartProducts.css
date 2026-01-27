@@ -1,0 +1,21 @@
+.products{
+    height: 400px;
+    margin-bottom: 0;
+}
+
+.purchase-button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgb(73, 193, 233);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.purchase-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -20,7 +20,7 @@ p{
     font-weight: bold;
 }
 
-button{
+.add-to-cart{
     padding: 10px 15px;
     background-color: rgb(86, 204, 242);
     border: none;
