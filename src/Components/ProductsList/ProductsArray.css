@@ -15,7 +15,7 @@
   padding: 0;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 875px) {
   .products-list {
     grid-template-columns: 1fr;
   }

@@ -1,51 +1,16 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import CartProductsList from './CartProductsList';
 import './CartProducts.css';
+import CartContext from "../Context/CartContext";
 
 const CartProducts = (props) => {
 
-    const products = [
-           {
-            id: 1,
-
-            title: 'Colors',
-
-            price: 100,
-
-            imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-
-            quantity: 2,
-
-            },
-
-            {
-
-            id: 2,
-
-            title: 'Black and white Colors',
-
-            price: 50,
-
-            imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-
-            quantity: 3,
-
-            },
-
-            {
-
-            id: 3,
-
-            title: 'Yellow and Black Colors',
-
-            price: 70,
-
-            imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-
-            quantity: 1,
-
-         }
-    ];
+    const cartCtx = useContext(CartContext);
+    const products = cartCtx.items;
+    let totalPrice = 0;
+    products.forEach(product => {
+        totalPrice = totalPrice + (product.price * product.quantity);
+    });
 
     const onCloseButtonClick = () => {
         props.onCloseCart();
@@ -56,6 +21,7 @@ const CartProducts = (props) => {
         <ul className='products'>
             {products.map(product => (
                 <CartProductsList key={product.id}
+                    id={product.id}
                     title={product.title}
                     price={product.price}
                     quantity={product.quantity}
@@ -64,6 +30,7 @@ const CartProducts = (props) => {
             ))}
         </ul>
         <div className='purchase-button-container'>
+        <p>Total price = ${totalPrice}</p>
         <button className='purchase-button'>purchase</button>
         </div>
         </React.Fragment>

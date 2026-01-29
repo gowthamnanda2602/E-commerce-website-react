@@ -5,6 +5,7 @@ import './ProductsArray.css';
 const ProductsArray = () => {
   const products = [
      {
+        id: 'p1',
 
         title: 'Colors',
 
@@ -15,6 +16,7 @@ const ProductsArray = () => {
         },
 
         {
+          id: 'p2',
 
         title: 'Black and white Colors',
 
@@ -25,6 +27,7 @@ const ProductsArray = () => {
         },
 
         {
+          id: 'p3',
 
         title: 'Yellow and Black Colors',
 
@@ -35,6 +38,7 @@ const ProductsArray = () => {
         },
 
         {
+          id: 'p4',
 
         title: 'Blue Color',
 
@@ -46,13 +50,16 @@ const ProductsArray = () => {
 
         ];
 
-        const productsList = ( <div className="productslist-container"><ul className="products-list">{products.map((product) => (
-          <List key={product.title}
+        const productsList = ( <div className="productslist-container">
+          <ul className="products-list">{products.map((product) => (
+          <List key={product.id}
+          id={product.id}
           title={product.title}
           price={product.price}
           imageUrl={product.imageUrl}
           />
-        ))}</ul></div> );
+        ))}</ul>
+        </div> );
 
 
     return productsList;

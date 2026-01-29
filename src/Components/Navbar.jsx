@@ -1,11 +1,14 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import './Navbar.css';
+import CartContext from './Context/CartContext';
 
 
  const Navbar = (props) => {
 
+  const cartCtx = useContext(CartContext);
+  const itemsInCart = cartCtx.items.length;
+
   const onCartButtonClick = () => {
-    console.log("cart button clicked");
     props.onShowCart();
   }
 
@@ -16,7 +19,10 @@ import './Navbar.css';
         <h2>STORE</h2>
         <h2>ABOUT</h2>
       </div>
-        <button className='cart-button' onClick={onCartButtonClick}>cart</button>
+        <button className='cart-button' onClick={onCartButtonClick}>
+          <span>Cart Items</span>
+          <span className='cart-count'>{itemsInCart}</span>
+        </button>
     </div>
   );
 }

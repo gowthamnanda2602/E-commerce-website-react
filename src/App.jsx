@@ -4,6 +4,7 @@ import Title from './Components/Title'
 import ProductsArray from './Components/ProductsList/ProductsArray'
 import Modal from './Components/Modal'
 import CartProducts from './Components/Cart/CartProducts'
+import CartContextProvider from './Components/Context/CartContextProvider'
 
 
 function App() {
@@ -20,11 +21,12 @@ function App() {
 
   return (
     <React.Fragment>
-      {showCart && <Modal onCloseCart={hideCartHandler}> <CartProducts onCloseCart={hideCartHandler}/> </Modal>}
-                    
+      <CartContextProvider>
+      {showCart && <Modal onCloseCart={hideCartHandler}> <CartProducts onCloseCart={hideCartHandler}/> </Modal>}            
       <Navbar onShowCart={showCartHandler} />
       <Title />
       <ProductsArray />
+      </CartContextProvider>
     </React.Fragment>
   )
 }

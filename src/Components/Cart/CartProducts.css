@@ -4,7 +4,8 @@
 }
 
 .purchase-button{
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-left: 30px;
     padding: 10px 20px;
     background-color: rgb(73, 193, 233);
     color: white;
@@ -18,4 +19,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 40px;
+}
+
+.purchase-button-container > p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.purchase-button:hover{
+    background-color: rgb(36, 158, 199);
 }

@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 h3{
@@ -16,16 +16,31 @@ h3{
     color:brown
 }
 
-p{
+.price-button p{
     font-weight: bold;
+    font-size: 18px;
 }
 
 .add-to-cart{
-    padding: 10px 15px;
+    padding: 8px 5px;
     background-color: rgb(86, 204, 242);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     color:white;
     font-size: 15px;
+}
+
+.add-to-cart:hover{
+    background-color: rgb(0, 153, 204);
+}
+
+#quantity-input{
+    width: 25px;
+    height: 15px;
+    padding: 3px;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+    border: 1.5px solid black;
 }
