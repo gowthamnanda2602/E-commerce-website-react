@@ -1,34 +1,21 @@
-import React, { useState } from 'react'
-import Navbar from './Components/Navbar'
-import Title from './Components/Title'
-import ProductsArray from './Components/ProductsList/ProductsArray'
-import Modal from './Components/Modal'
-import CartProducts from './Components/Cart/CartProducts'
-import CartContextProvider from './Components/Context/CartContextProvider'
+import {createBrowserRouter,RouterProvider} from "react-router-dom"
+import ProductsPage from "./pages/ProductsPage"
+import AboutPage from "./pages/AboutPage";
+import NavigationLinks from "./pages/NavigationLinks";
+import RootOutlay from "./pages/RootOutlay";
+import HomePage from "./pages/HomePage";
 
+const router = createBrowserRouter([
+  {path:"/", element: <RootOutlay/>,
+    children:[ {path:"/", element: <HomePage/>},
+    {path:"/products", element: <ProductsPage/>},
+    {path:"/about", element: <AboutPage/>}]
+  }
+  ]);
 
 function App() {
-  
-  const [showCart, setShowCart] = useState(false);
 
-  const showCartHandler = () => {
-    setShowCart(true);
-  }
-
-  const hideCartHandler = () => {
-    setShowCart(false);
-  }
-
-  return (
-    <React.Fragment>
-      <CartContextProvider>
-      {showCart && <Modal onCloseCart={hideCartHandler}> <CartProducts onCloseCart={hideCartHandler}/> </Modal>}            
-      <Navbar onShowCart={showCartHandler} />
-      <Title />
-      <ProductsArray />
-      </CartContextProvider>
-    </React.Fragment>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

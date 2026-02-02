@@ -1,0 +1,17 @@
+.homepage-container{
+    margin-top: 60px;
+}
+
+.homepage-container > h1{
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+
+.tourslist-ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
